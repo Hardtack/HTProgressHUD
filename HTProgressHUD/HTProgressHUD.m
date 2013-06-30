@@ -16,6 +16,8 @@
 @interface HTProgressHUD ()
 
 @property (nonatomic, weak) UIView *targetView;
+@property (nonatomic) BOOL onShowingAnimation; // You cannot cancel showing animation
+@property (nonatomic) BOOL shouldHideWithAnimation; // Flag for hiding
 
 + (NSOperationQueue *)operationQueue;
 
@@ -231,6 +233,7 @@
         
         // Data
         self.progress = 0;
+        self.onShowingAnimation = NO;
         
         // Auto-layout
         if (NSClassFromString(@"NSLayoutConstraint")) {
@@ -274,7 +277,9 @@
         [self.delegate progressHUD:self willBeShownInView:view];
     }
     self.hidden = NO;
+    self.shouldHideWithAnimation = NO;
     if (animated) {
+        self.onShowingAnimation = YES;
         self.animation.performingHUD = self;
         self.animation.animationType = HTProgressHUDAnimationTypeShowing;
         [self.animation setUpShowingAnimation:self];
@@ -348,6 +353,10 @@
         return;
     }
     if (animated) {
+        if (self.onShowingAnimation) {
+            self.shouldHideWithAnimation = YES;
+            return;
+        }
         self.animation.performingHUD = self;
         self.animation.animationType = HTProgressHUDAnimationTypeHiding;
         [self.animation setUpHidingAnimation:self];
@@ -383,6 +392,7 @@
 #pragma mark Animation callback
 
 - (void)animationDidFinishWithType:(HTProgressHUDAnimationType)animationType {
+    self.onShowingAnimation = NO;
     switch (animationType) {
         case HTProgressHUDAnimationTypeShowing:
             [self.animation tearDownShowingAnimation:self];
@@ -446,6 +456,14 @@
     _progress = progress;
     self.indicatorView.progress = progress;
     [self updateViews];
+}
+
+- (void)setOnShowingAnimation:(BOOL)onShowingAnimation {
+    _onShowingAnimation = onShowingAnimation;
+    if (!onShowingAnimation && self.shouldHideWithAnimation) {
+        [self hideWithAnimation:YES];
+        self.shouldHideWithAnimation = NO;
+    }
 }
 
 #pragma mark - Overrides
