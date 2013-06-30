@@ -66,7 +66,9 @@ You can even customize animation by subclassing `HTProgressHUDAnimation`.
         }
     }];
 
+or See HTProgressHUDExample Project.  
+
 ###Customization
    
-    See the source of built-in animations and built-in indicators.
-    These are also kind of customized animations/indocators.
+See the source of built-in animations and built-in indicators.
+These are also kind of customized animations/indocators.
