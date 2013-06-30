@@ -130,7 +130,10 @@
     // Label size
     [self.textLabel sizeToFit];
     CGRect labelFrame = self.textLabel.frame;
-    labelFrame.origin.y = indicatorFrame.origin.y + indicatorFrame.size.height + 10;
+    labelFrame.origin.y = indicatorFrame.origin.y + indicatorFrame.size.height;
+    if (!CGRectIsEmpty(labelFrame)) {
+        labelFrame.origin.y += 10;
+    }
     
     // HUD size
     CGRect frame = CGRectZero;
@@ -191,7 +194,7 @@
         
         // HUD View
         self.hudView = [[UIView alloc] init];
-        self.hudView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+        self.hudView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.7];
         self.hudView.opaque = NO;
         self.hudView.layer.cornerRadius = 10.0f;
         self.hudView.layer.masksToBounds = YES;

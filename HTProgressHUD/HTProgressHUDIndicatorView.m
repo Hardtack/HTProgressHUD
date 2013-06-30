@@ -33,7 +33,7 @@
 #pragma mark - Initializers
 
 - (id)init {
-    return [self initWithFrame:CGRectMake(0, 0, 70, 70)];
+    return [self initWithFrame:CGRectMake(0, 0, 50, 50)];
 }
 
 - (id)initWithFrame:(CGRect)frame {

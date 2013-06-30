@@ -15,6 +15,8 @@
 		237D2A9117805E32004B696F /* HTProgressHUDIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2A8817805E32004B696F /* HTProgressHUDIndicatorView.m */; };
 		237D2A9217805E32004B696F /* HTProgressHUDPieIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2A8A17805E32004B696F /* HTProgressHUDPieIndicatorView.m */; };
 		237D2A9317805E32004B696F /* HTProgressHUDRingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2A8C17805E32004B696F /* HTProgressHUDRingIndicatorView.m */; };
+		237D2AD017807479004B696F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237D2ACF17807479004B696F /* QuartzCore.framework */; };
+		237D2AD217807490004B696F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237D2AD117807490004B696F /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -47,6 +49,8 @@
 		237D2A8A17805E32004B696F /* HTProgressHUDPieIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDPieIndicatorView.m; sourceTree = "<group>"; };
 		237D2A8B17805E32004B696F /* HTProgressHUDRingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDRingIndicatorView.h; sourceTree = "<group>"; };
 		237D2A8C17805E32004B696F /* HTProgressHUDRingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDRingIndicatorView.m; sourceTree = "<group>"; };
+		237D2ACF17807479004B696F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		237D2AD117807490004B696F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				237D2AD217807490004B696F /* UIKit.framework in Frameworks */,
+				237D2AD017807479004B696F /* QuartzCore.framework in Frameworks */,
 				237D2A7217805E1D004B696F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,6 +87,8 @@
 		237D2A7017805E1D004B696F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				237D2AD117807490004B696F /* UIKit.framework */,
+				237D2ACF17807479004B696F /* QuartzCore.framework */,
 				237D2A7117805E1D004B696F /* Foundation.framework */,
 			);
 			name = Frameworks;
