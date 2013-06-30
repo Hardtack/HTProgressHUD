@@ -1,0 +1,320 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		237D2AA317805EB7004B696F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237D2AA217805EB7004B696F /* UIKit.framework */; };
+		237D2AA517805EB7004B696F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237D2AA417805EB7004B696F /* Foundation.framework */; };
+		237D2AA717805EB7004B696F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237D2AA617805EB7004B696F /* CoreGraphics.framework */; };
+		237D2AAD17805EB7004B696F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 237D2AAB17805EB7004B696F /* InfoPlist.strings */; };
+		237D2AAF17805EB7004B696F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2AAE17805EB7004B696F /* main.m */; };
+		237D2AB317805EB7004B696F /* HTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2AB217805EB7004B696F /* HTAppDelegate.m */; };
+		237D2AB517805EB7004B696F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 237D2AB417805EB7004B696F /* Default.png */; };
+		237D2AB717805EB7004B696F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 237D2AB617805EB7004B696F /* Default@2x.png */; };
+		237D2AB917805EB7004B696F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 237D2AB817805EB7004B696F /* Default-568h@2x.png */; };
+		237D2ABC17805EB7004B696F /* HTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2ABB17805EB7004B696F /* HTViewController.m */; };
+		237D2ABF17805EB7004B696F /* HTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 237D2ABD17805EB7004B696F /* HTViewController.xib */; };
+		237D2ACC17805F20004B696F /* libHTProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 237D2ACB17805F20004B696F /* libHTProgressHUD.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		237D2A9F17805EB7004B696F /* HTProgressHUDExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTProgressHUDExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		237D2AA217805EB7004B696F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		237D2AA417805EB7004B696F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		237D2AA617805EB7004B696F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		237D2AAA17805EB7004B696F /* HTProgressHUDExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HTProgressHUDExample-Info.plist"; sourceTree = "<group>"; };
+		237D2AAC17805EB7004B696F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		237D2AAE17805EB7004B696F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		237D2AB017805EB7004B696F /* HTProgressHUDExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HTProgressHUDExample-Prefix.pch"; sourceTree = "<group>"; };
+		237D2AB117805EB7004B696F /* HTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTAppDelegate.h; sourceTree = "<group>"; };
+		237D2AB217805EB7004B696F /* HTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTAppDelegate.m; sourceTree = "<group>"; };
+		237D2AB417805EB7004B696F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		237D2AB617805EB7004B696F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		237D2AB817805EB7004B696F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		237D2ABA17805EB7004B696F /* HTViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTViewController.h; sourceTree = "<group>"; };
+		237D2ABB17805EB7004B696F /* HTViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTViewController.m; sourceTree = "<group>"; };
+		237D2ABE17805EB7004B696F /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/HTViewController.xib; sourceTree = "<group>"; };
+		237D2ACB17805F20004B696F /* libHTProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libHTProgressHUD.a; path = "../../../../../Library/Developer/Xcode/DerivedData/HTProgressHUD-browynjqienuvuekectkcuuvxjvf/Build/Products/Debug-iphoneos/libHTProgressHUD.a"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		237D2A9C17805EB7004B696F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				237D2ACC17805F20004B696F /* libHTProgressHUD.a in Frameworks */,
+				237D2AA317805EB7004B696F /* UIKit.framework in Frameworks */,
+				237D2AA517805EB7004B696F /* Foundation.framework in Frameworks */,
+				237D2AA717805EB7004B696F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		237D2A9617805EB7004B696F = {
+			isa = PBXGroup;
+			children = (
+				237D2AA817805EB7004B696F /* HTProgressHUDExample */,
+				237D2AA117805EB7004B696F /* Frameworks */,
+				237D2AA017805EB7004B696F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		237D2AA017805EB7004B696F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				237D2A9F17805EB7004B696F /* HTProgressHUDExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		237D2AA117805EB7004B696F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				237D2ACB17805F20004B696F /* libHTProgressHUD.a */,
+				237D2AA217805EB7004B696F /* UIKit.framework */,
+				237D2AA417805EB7004B696F /* Foundation.framework */,
+				237D2AA617805EB7004B696F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		237D2AA817805EB7004B696F /* HTProgressHUDExample */ = {
+			isa = PBXGroup;
+			children = (
+				237D2AB117805EB7004B696F /* HTAppDelegate.h */,
+				237D2AB217805EB7004B696F /* HTAppDelegate.m */,
+				237D2ABA17805EB7004B696F /* HTViewController.h */,
+				237D2ABB17805EB7004B696F /* HTViewController.m */,
+				237D2ABD17805EB7004B696F /* HTViewController.xib */,
+				237D2AA917805EB7004B696F /* Supporting Files */,
+			);
+			path = HTProgressHUDExample;
+			sourceTree = "<group>";
+		};
+		237D2AA917805EB7004B696F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				237D2AAA17805EB7004B696F /* HTProgressHUDExample-Info.plist */,
+				237D2AAB17805EB7004B696F /* InfoPlist.strings */,
+				237D2AAE17805EB7004B696F /* main.m */,
+				237D2AB017805EB7004B696F /* HTProgressHUDExample-Prefix.pch */,
+				237D2AB417805EB7004B696F /* Default.png */,
+				237D2AB617805EB7004B696F /* Default@2x.png */,
+				237D2AB817805EB7004B696F /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		237D2A9E17805EB7004B696F /* HTProgressHUDExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 237D2AC217805EB7004B696F /* Build configuration list for PBXNativeTarget "HTProgressHUDExample" */;
+			buildPhases = (
+				237D2A9B17805EB7004B696F /* Sources */,
+				237D2A9C17805EB7004B696F /* Frameworks */,
+				237D2A9D17805EB7004B696F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HTProgressHUDExample;
+			productName = HTProgressHUDExample;
+			productReference = 237D2A9F17805EB7004B696F /* HTProgressHUDExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		237D2A9717805EB7004B696F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = HT;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Hardtack;
+			};
+			buildConfigurationList = 237D2A9A17805EB7004B696F /* Build configuration list for PBXProject "HTProgressHUDExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 237D2A9617805EB7004B696F;
+			productRefGroup = 237D2AA017805EB7004B696F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				237D2A9E17805EB7004B696F /* HTProgressHUDExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		237D2A9D17805EB7004B696F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				237D2AAD17805EB7004B696F /* InfoPlist.strings in Resources */,
+				237D2AB517805EB7004B696F /* Default.png in Resources */,
+				237D2AB717805EB7004B696F /* Default@2x.png in Resources */,
+				237D2AB917805EB7004B696F /* Default-568h@2x.png in Resources */,
+				237D2ABF17805EB7004B696F /* HTViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		237D2A9B17805EB7004B696F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				237D2AAF17805EB7004B696F /* main.m in Sources */,
+				237D2AB317805EB7004B696F /* HTAppDelegate.m in Sources */,
+				237D2ABC17805EB7004B696F /* HTViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		237D2AAB17805EB7004B696F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				237D2AAC17805EB7004B696F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		237D2ABD17805EB7004B696F /* HTViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				237D2ABE17805EB7004B696F /* en */,
+			);
+			name = HTViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		237D2AC017805EB7004B696F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "../HTProgressHUD/**";
+			};
+			name = Debug;
+		};
+		237D2AC117805EB7004B696F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				USER_HEADER_SEARCH_PATHS = "../HTProgressHUD/**";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		237D2AC317805EB7004B696F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HTProgressHUDExample/HTProgressHUDExample-Prefix.pch";
+				INFOPLIST_FILE = "HTProgressHUDExample/HTProgressHUDExample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/HTProgressHUD-browynjqienuvuekectkcuuvxjvf/Build/Products/Debug-iphoneos\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		237D2AC417805EB7004B696F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HTProgressHUDExample/HTProgressHUDExample-Prefix.pch";
+				INFOPLIST_FILE = "HTProgressHUDExample/HTProgressHUDExample-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../../../../Library/Developer/Xcode/DerivedData/HTProgressHUD-browynjqienuvuekectkcuuvxjvf/Build/Products/Debug-iphoneos\"",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		237D2A9A17805EB7004B696F /* Build configuration list for PBXProject "HTProgressHUDExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				237D2AC017805EB7004B696F /* Debug */,
+				237D2AC117805EB7004B696F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		237D2AC217805EB7004B696F /* Build configuration list for PBXNativeTarget "HTProgressHUDExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				237D2AC317805EB7004B696F /* Debug */,
+				237D2AC417805EB7004B696F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 237D2A9717805EB7004B696F /* Project object */;
+}

@@ -8,8 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		237D2A7217805E1D004B696F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 237D2A7117805E1D004B696F /* Foundation.framework */; };
-		237D2A7717805E1D004B696F /* HTProgressHUD.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 237D2A7617805E1D004B696F /* HTProgressHUD.h */; };
-		237D2A7917805E1D004B696F /* HTProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2A7817805E1D004B696F /* HTProgressHUD.m */; };
+		237D2A8D17805E32004B696F /* HTProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2A8017805E32004B696F /* HTProgressHUD.m */; };
+		237D2A8E17805E32004B696F /* HTProgressHUDAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2A8217805E32004B696F /* HTProgressHUDAnimation.m */; };
+		237D2A8F17805E32004B696F /* HTProgressHUDFadeAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2A8417805E32004B696F /* HTProgressHUDFadeAnimation.m */; };
+		237D2A9017805E32004B696F /* HTProgressHUDFadeZoomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2A8617805E32004B696F /* HTProgressHUDFadeZoomAnimation.m */; };
+		237D2A9117805E32004B696F /* HTProgressHUDIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2A8817805E32004B696F /* HTProgressHUDIndicatorView.m */; };
+		237D2A9217805E32004B696F /* HTProgressHUDPieIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2A8A17805E32004B696F /* HTProgressHUDPieIndicatorView.m */; };
+		237D2A9317805E32004B696F /* HTProgressHUDRingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 237D2A8C17805E32004B696F /* HTProgressHUDRingIndicatorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -19,7 +24,6 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
-				237D2A7717805E1D004B696F /* HTProgressHUD.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -29,8 +33,20 @@
 		237D2A6E17805E1D004B696F /* libHTProgressHUD.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libHTProgressHUD.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		237D2A7117805E1D004B696F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		237D2A7517805E1D004B696F /* HTProgressHUD-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HTProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
-		237D2A7617805E1D004B696F /* HTProgressHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTProgressHUD.h; sourceTree = "<group>"; };
-		237D2A7817805E1D004B696F /* HTProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUD.m; sourceTree = "<group>"; };
+		237D2A7F17805E32004B696F /* HTProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUD.h; sourceTree = "<group>"; };
+		237D2A8017805E32004B696F /* HTProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUD.m; sourceTree = "<group>"; };
+		237D2A8117805E32004B696F /* HTProgressHUDAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDAnimation.h; sourceTree = "<group>"; };
+		237D2A8217805E32004B696F /* HTProgressHUDAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDAnimation.m; sourceTree = "<group>"; };
+		237D2A8317805E32004B696F /* HTProgressHUDFadeAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDFadeAnimation.h; sourceTree = "<group>"; };
+		237D2A8417805E32004B696F /* HTProgressHUDFadeAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDFadeAnimation.m; sourceTree = "<group>"; };
+		237D2A8517805E32004B696F /* HTProgressHUDFadeZoomAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDFadeZoomAnimation.h; sourceTree = "<group>"; };
+		237D2A8617805E32004B696F /* HTProgressHUDFadeZoomAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDFadeZoomAnimation.m; sourceTree = "<group>"; };
+		237D2A8717805E32004B696F /* HTProgressHUDIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDIndicatorView.h; sourceTree = "<group>"; };
+		237D2A8817805E32004B696F /* HTProgressHUDIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDIndicatorView.m; sourceTree = "<group>"; };
+		237D2A8917805E32004B696F /* HTProgressHUDPieIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDPieIndicatorView.h; sourceTree = "<group>"; };
+		237D2A8A17805E32004B696F /* HTProgressHUDPieIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDPieIndicatorView.m; sourceTree = "<group>"; };
+		237D2A8B17805E32004B696F /* HTProgressHUDRingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTProgressHUDRingIndicatorView.h; sourceTree = "<group>"; };
+		237D2A8C17805E32004B696F /* HTProgressHUDRingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTProgressHUDRingIndicatorView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +89,10 @@
 		237D2A7317805E1D004B696F /* HTProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
-				237D2A7617805E1D004B696F /* HTProgressHUD.h */,
-				237D2A7817805E1D004B696F /* HTProgressHUD.m */,
+				237D2A7F17805E32004B696F /* HTProgressHUD.h */,
+				237D2A8017805E32004B696F /* HTProgressHUD.m */,
+				237D2A9417805E3B004B696F /* Animations */,
+				237D2A9517805E41004B696F /* Indicators */,
 				237D2A7417805E1D004B696F /* Supporting Files */,
 			);
 			path = HTProgressHUD;
@@ -86,6 +104,32 @@
 				237D2A7517805E1D004B696F /* HTProgressHUD-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		237D2A9417805E3B004B696F /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				237D2A8117805E32004B696F /* HTProgressHUDAnimation.h */,
+				237D2A8217805E32004B696F /* HTProgressHUDAnimation.m */,
+				237D2A8317805E32004B696F /* HTProgressHUDFadeAnimation.h */,
+				237D2A8417805E32004B696F /* HTProgressHUDFadeAnimation.m */,
+				237D2A8517805E32004B696F /* HTProgressHUDFadeZoomAnimation.h */,
+				237D2A8617805E32004B696F /* HTProgressHUDFadeZoomAnimation.m */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		237D2A9517805E41004B696F /* Indicators */ = {
+			isa = PBXGroup;
+			children = (
+				237D2A8717805E32004B696F /* HTProgressHUDIndicatorView.h */,
+				237D2A8817805E32004B696F /* HTProgressHUDIndicatorView.m */,
+				237D2A8917805E32004B696F /* HTProgressHUDPieIndicatorView.h */,
+				237D2A8A17805E32004B696F /* HTProgressHUDPieIndicatorView.m */,
+				237D2A8B17805E32004B696F /* HTProgressHUDRingIndicatorView.h */,
+				237D2A8C17805E32004B696F /* HTProgressHUDRingIndicatorView.m */,
+			);
+			name = Indicators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +183,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				237D2A7917805E1D004B696F /* HTProgressHUD.m in Sources */,
+				237D2A8D17805E32004B696F /* HTProgressHUD.m in Sources */,
+				237D2A8E17805E32004B696F /* HTProgressHUDAnimation.m in Sources */,
+				237D2A8F17805E32004B696F /* HTProgressHUDFadeAnimation.m in Sources */,
+				237D2A9017805E32004B696F /* HTProgressHUDFadeZoomAnimation.m in Sources */,
+				237D2A9117805E32004B696F /* HTProgressHUDIndicatorView.m in Sources */,
+				237D2A9217805E32004B696F /* HTProgressHUDPieIndicatorView.m in Sources */,
+				237D2A9317805E32004B696F /* HTProgressHUDRingIndicatorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +220,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -193,7 +243,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -242,6 +292,7 @@
 				237D2A7E17805E1D004B696F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
