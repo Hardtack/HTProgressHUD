@@ -43,7 +43,7 @@ And you can also customize indicator by subclassing `HTProgressHUDIndicatorView`
 
 ###Animations
 
-It has following built-in indicators.  
+It has following built-in animations.  
 
 *   Fade animation.  
 
