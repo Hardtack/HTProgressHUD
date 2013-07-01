@@ -135,6 +135,12 @@ Copy following files into your project.
 ##Usages
 
 ###Example
+    
+    HTProgressHUD *HUD = [[HTProgressHUD alloc] init];
+    [HUD showInView:self.view];
+    [HUD hideAfterDelay:3];
+
+###More Complex Example
 
     __block HTProgressHUD *progressHUD = [[HTProgressHUD alloc] init];
     progressHUD.animation = [HTProgressHUDFadeZoomAnimation animation];
