@@ -172,3 +172,11 @@ or See HTProgressHUDExample Project.
    
 See the source of built-in animations and built-in indicators.
 These are also kind of customized animations/indicators.
+
+##Three-line Summary
+
+1.  MBProgressHUD is useful.
+
+2.  But it causes so many crashes.  
+
+3.  So I reinvented the wheel.  
