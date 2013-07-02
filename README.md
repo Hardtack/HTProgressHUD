@@ -12,6 +12,14 @@ So I re-implemented it, with newer-APIs, more stability and more customizabiliti
 
 ##Requirements
 
+###iOS SDK
+
+*   iOS 5.0 or higher
+
+*   Automatic Reference Counting (ARC)
+
+###Frameworks
+
 *   UIKit.framework
 
 *   Foundation.framework
