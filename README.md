@@ -101,7 +101,7 @@ You can add HTProgressHUD as a static library
 → Link Binary with Libraries + `libHTProgressHUD.a`
 
 9.  Click on the `Your Project` entry, Targets → Your Target → Build Settings
-→ Search Paths → User Header Search Paths → + `HTProgressHUD”'s path`
+→ Search Paths → User Header Search Paths → + `HTProgressHUD's path`
 
 10. Click on the `Your Project` entry, Targets → Your Target → Build Settings
 → Linking → Other Linker Flags → + `-ObjC`
