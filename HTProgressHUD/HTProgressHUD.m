@@ -172,10 +172,12 @@
                              }
                          }];
     } else {
-        [self performSelectorOnMainThread:@selector(setNeedsLayout) withObject:nil waitUntilDone:YES];
-        if ([self.delegate respondsToSelector:@selector(progressHUDDidChange:)]) {
-            [self.delegate progressHUDDidChange:self];
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self setNeedsLayout];
+            if ([self.delegate respondsToSelector:@selector(progressHUDDidChange:)]) {
+                [self.delegate progressHUDDidChange:self];
+            }
+        });
     }
 }
 
@@ -431,8 +433,10 @@
 
 - (void)setText:(NSString *)text {
     _text = text;
-    [self.textLabel performSelectorOnMainThread:@selector(setText:) withObject:text waitUntilDone:YES];
-    [self updateViews];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.text = text;
+        [self updateViews];
+    });
 }
 
 - (void)setIndicatorView:(HTProgressHUDIndicatorView *)indicatorView {
