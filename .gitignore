@@ -13,3 +13,4 @@ doxygenWarnings.txt
 Issue.xcodeproj/project.xcworkspace/contents.xcworkspacedata
 Issue.xcodeproj/xcuserdata/*
 Podfile.lock
+xcshareddata
