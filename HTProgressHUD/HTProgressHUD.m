@@ -434,7 +434,7 @@
 - (void)setText:(NSString *)text {
     _text = text;
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.text = text;
+        self.textLabel.text = text;
         [self updateViews];
     });
 }
