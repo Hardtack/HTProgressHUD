@@ -1,3 +1,9 @@
+#HELP
+I have some strange bugs in projects using HTProgressHUD.  
+I'm not sure that HTProgressHUD is source of these bugs.  
+Please visit the [issue page](https://github.com/Hardtack/HTProgressHUD/issues/5), and post a comment if you have same problem with me.  
+Thank you.
+
 #HTProgressHUD
 
 HTProgressHUD is an replacement for UIProgressHUD, the undocumented UI component in iOS.  
