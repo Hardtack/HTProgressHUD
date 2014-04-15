@@ -65,6 +65,9 @@ typedef enum {
 @property (nonatomic) BOOL addToViewOnShow; // Default is YES;
 @property (nonatomic) BOOL removeFromSuperviewOnHide; // Default is YES;
 
+// View Interaction Options
+@property (nonatomic) BOOL disableUserInteractionOfSuperview;
+
 // Layout Options
 @property (nonatomic) UIEdgeInsets paddingInsets;
 @property (nonatomic) UIEdgeInsets marginInsets;

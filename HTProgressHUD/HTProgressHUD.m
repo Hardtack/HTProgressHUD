@@ -278,6 +278,11 @@
     if ([self.delegate respondsToSelector:@selector(progressHUD:willBeShownInView:)]) {
         [self.delegate progressHUD:self willBeShownInView:view];
     }
+    
+    if (self.disableUserInteractionOfSuperview) {
+        self.targetView.userInteractionEnabled = NO;
+    }
+    
     self.hidden = NO;
     self.shouldHideWithAnimation = NO;
     if (animated) {
@@ -353,6 +358,10 @@
             [self hideWithAnimation:animated];
         });
         return;
+    }
+    
+    if (self.disableUserInteractionOfSuperview) {
+        self.targetView.userInteractionEnabled = YES;
     }
     if (animated) {
         if (self.onShowingAnimation) {
