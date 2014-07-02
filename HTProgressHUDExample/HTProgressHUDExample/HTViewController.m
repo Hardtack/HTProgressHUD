@@ -8,6 +8,7 @@
 
 #import "HTViewController.h"
 #import "HTProgressHUD.h"
+#import "HTProgressHUDFadeAnimation.h"
 #import "HTProgressHUDFadeZoomAnimation.h"
 #import "HTProgressHUDIndicatorView.h"
 
@@ -61,11 +62,25 @@
 
 -(void)textOnly{
     HTProgressHUD *HUD = [[HTProgressHUD alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
-    HUD.text = @"Hello World...............";
+
+    HUD.text = @"Hello, World!";
     HUD.indicatorView = [[HTProgressHUDIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
-    [HUD showInView:self.view];
     
-    [HUD hideAfterDelay:3];
+    HTProgressHUDFadeAnimation *animation = [HTProgressHUDFadeAnimation animation];
+    animation.duration = 0.5;
+    animation.curve = UIViewAnimationCurveLinear;
+    HUD.animation = animation;
+    
+    HUD.position = HTProgressHUDPositionBottomCenter;
+    HUD.marginInsets = (UIEdgeInsets) {
+        .top = 0,
+        .bottom = 20,
+        .left = 0,
+        .right = 0,
+    };
+    
+    [HUD showInView:self.view];
+    [HUD hideAfterDelay:2];
 }
 
 #pragma mark - Public mehtods
@@ -76,6 +91,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.title = @"HTProgressHUD Demo";
+    
     __block HTProgressHUD *progressHUD = [[HTProgressHUD alloc] init];
     progressHUD.animation = [HTProgressHUDFadeZoomAnimation animation];
     progressHUD.indicatorView = [HTProgressHUDIndicatorView indicatorViewWithType:HTProgressHUDIndicatorTypePie];
@@ -117,7 +135,7 @@
             cell.textLabel.text = @"Simple Demo";
             break;
         case 1:
-            cell.textLabel.text = @"Text";
+            cell.textLabel.text = @"Activity Indicator with Text";
             break;
         case 2:
             cell.textLabel.text = @"Pie Progress";
