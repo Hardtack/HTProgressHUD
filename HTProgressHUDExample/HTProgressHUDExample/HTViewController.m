@@ -28,7 +28,9 @@
 - (void)withText {
     HTProgressHUD *HUD = [[HTProgressHUD alloc] init];
     HUD.text = @"Loading...";
+    [HUD.indicatorView removeFromSuperview];
     [HUD showInView:self.view];
+    
     [HUD hideAfterDelay:3];
 }
 
@@ -57,6 +59,15 @@
             [NSThread sleepForTimeInterval:r];
         }
     }];
+}
+
+-(void)textOnly{
+    HTProgressHUD *HUD = [[HTProgressHUD alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
+    HUD.text = @"Hello World...............";
+    HUD.indicatorView = [[HTProgressHUDIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    [HUD showInView:self.view];
+    
+    [HUD hideAfterDelay:3];
 }
 
 #pragma mark - Public mehtods
@@ -95,7 +106,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    return 5;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -116,6 +127,8 @@
         case 3:
             cell.textLabel.text = @"Zoom & Ring";
             break;
+        case 4:
+            cell.textLabel.text = @"Text Only";
     }
     return cell;
 }
@@ -136,6 +149,9 @@
             break;
         case 3:
             [self zoomAnimationWithRing];
+            break;
+        case 4:
+            [self textOnly];
             break;
     }
 }
