@@ -54,7 +54,7 @@
             frame.origin.y = self.marginInsets.top;
             break;
         case HTProgressHUDPositionTopRight:
-            frame.origin.x = viewBounds.size.width - self.marginInsets.right;
+            frame.origin.x = viewBounds.size.width - self.marginInsets.right - frame.size.width;
             frame.origin.y = self.marginInsets.top;
             break;
             
@@ -67,7 +67,7 @@
             frame.origin.y = center.y - floorf(frame.size.height / 2);
             break;
         case HTProgressHUDPositionCenterRight:
-            frame.origin.x = viewBounds.size.width - self.marginInsets.right;
+            frame.origin.x = viewBounds.size.width - self.marginInsets.right - frame.size.width;
             frame.origin.y = center.y - floorf(frame.size.height / 2);
             break;
             
@@ -80,7 +80,7 @@
             frame.origin.y = viewBounds.size.height - self.marginInsets.bottom - frame.size.height;
             break;
         case HTProgressHUDPositionBottomRight:
-            frame.origin.x = viewBounds.size.width - self.marginInsets.right;
+            frame.origin.x = viewBounds.size.width - self.marginInsets.right - frame.size.width;
             frame.origin.y = viewBounds.size.height - self.marginInsets.bottom - frame.size.height;
             break;
     }
