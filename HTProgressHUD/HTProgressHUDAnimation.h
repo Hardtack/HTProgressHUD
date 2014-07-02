@@ -31,4 +31,7 @@ typedef enum {
 // You must Call after animation finished
 - (void)finishAnimation;
 
+// Convinience initializer
++ (instancetype)animation;
+
 @end

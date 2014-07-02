@@ -10,12 +10,6 @@
 
 @implementation HTProgressHUDFadeAnimation
 
-#pragma mark - Class methods
-
-+ (HTProgressHUDFadeAnimation *)animation {
-    return [[[self class] alloc] init];
-}
-
 #pragma mark - Initializers
 
 - (id)init {

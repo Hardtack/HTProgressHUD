@@ -9,11 +9,6 @@
 #import "HTProgressHUDFadeZoomAnimation.h"
 
 @implementation HTProgressHUDFadeZoomAnimation
-#pragma mark - Class methods
-
-+ (HTProgressHUDFadeZoomAnimation *)animation {
-    return [[[self class] alloc] init];
-}
 
 #pragma mark - Initializers
 

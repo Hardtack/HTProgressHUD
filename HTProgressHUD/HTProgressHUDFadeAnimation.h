@@ -13,6 +13,4 @@
 @property (nonatomic) NSTimeInterval duration; // Default is 0.3
 @property (nonatomic) UIViewAnimationCurve curve; // Default is UIViewAnimationCurveEaseInOut
 
-+ (HTProgressHUDFadeAnimation *)animation;
-
 @end

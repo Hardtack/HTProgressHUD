@@ -16,6 +16,12 @@
 
 @implementation HTProgressHUDAnimation
 
+#pragma mark - Class methods
+
++ (instancetype)animation {
+    return [[[self class] alloc] init];
+}
+
 #pragma mark - Public methods
 
 - (void)setUpShowingAnimation:(HTProgressHUD *)progressHUD {

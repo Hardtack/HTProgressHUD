@@ -16,6 +16,4 @@
 @property (nonatomic) UIViewAnimationCurve zoomInCurve; // Default is UIViewAnimationCurveEaseIn
 @property (nonatomic) UIViewAnimationCurve zoomOutCurve; // Default is UIViewAnimationCurveEaseOut
 
-+ (HTProgressHUDFadeZoomAnimation *)animation;
-
 @end
