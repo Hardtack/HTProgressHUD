@@ -139,7 +139,7 @@
     
     // HUD size
     CGRect frame = CGRectZero;
-    frame.size.width += self.paddingInsets.left + MAX(self.indicatorView.frame.size.width, labelFrame.size.width) + self.paddingInsets.right;
+    frame.size.width += self.paddingInsets.left + MAX(indicatorFrame.size.width, labelFrame.size.width) + self.paddingInsets.right;
     frame.size.height += labelFrame.origin.y + labelFrame.size.height + self.paddingInsets.bottom;
     frame = [self updatePositionForHUDFrame:frame];
     

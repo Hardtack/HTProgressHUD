@@ -64,7 +64,7 @@
     HTProgressHUD *HUD = [[HTProgressHUD alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
 
     HUD.text = @"Hello, World!";
-    HUD.indicatorView = [[HTProgressHUDIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    HUD.indicatorView = nil;
     
     HTProgressHUDFadeAnimation *animation = [HTProgressHUDFadeAnimation animation];
     animation.duration = 0.5;
