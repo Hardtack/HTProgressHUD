@@ -133,7 +133,7 @@
     [self.textLabel sizeToFit];
     CGRect labelFrame = self.textLabel.frame;
     labelFrame.origin.y = indicatorFrame.origin.y + indicatorFrame.size.height;
-    if (!CGRectIsEmpty(labelFrame)) {
+    if (!CGRectIsEmpty(labelFrame) && !CGRectIsEmpty(indicatorFrame)) {
         labelFrame.origin.y += 10;
     }
     
