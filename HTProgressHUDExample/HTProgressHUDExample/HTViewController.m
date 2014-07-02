@@ -28,9 +28,7 @@
 - (void)withText {
     HTProgressHUD *HUD = [[HTProgressHUD alloc] init];
     HUD.text = @"Loading...";
-    [HUD.indicatorView removeFromSuperview];
     [HUD showInView:self.view];
-    
     [HUD hideAfterDelay:3];
 }
 
