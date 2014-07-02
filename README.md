@@ -1,3 +1,8 @@
+## Notice About Maintainance
+
+I cannot maintain this project actively until 2016 because of military service.
+
+
 #HTProgressHUD
 
 HTProgressHUD is an replacement for UIProgressHUD, the undocumented UI component in iOS.  
