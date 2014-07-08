@@ -12,7 +12,7 @@
 
 #pragma mark - Initializers
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.duration = 0.3;
@@ -30,14 +30,14 @@
 #pragma mark  Showing animation
 
 - (void)setUpShowingAnimation:(HTProgressHUD *)progressHUD {
-    progressHUD.alpha = 0;
+    progressHUD.alpha = 0.0f;
 }
 
 - (void)performShowingAnimation:(HTProgressHUD *)progressHUD {
     [UIView setAnimationCurve:self.curve];
     [UIView animateWithDuration:self.duration
                      animations:^{
-                         progressHUD.alpha = 1.0;
+                         progressHUD.alpha = 1.0f;
                      }
                      completion:^(BOOL finished) {
                          [self finishAnimation];
@@ -56,7 +56,7 @@
     [UIView setAnimationCurve:self.curve];
     [UIView animateWithDuration:self.duration
                      animations:^{
-                         progressHUD.alpha = 0.0;
+                         progressHUD.alpha = 0.0f;
                      }
                      completion:^(BOOL finished) {
                          [self finishAnimation];
