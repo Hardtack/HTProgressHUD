@@ -13,6 +13,10 @@
 #import "HTProgressHUDFadeAnimation.h"
 #import "HTProgressHUDIndicatorView.h"
 
+#ifndef __IPHONE_8_0
+#define __IPHONE_8_0 80000
+#endif
+
 @interface HTProgressHUD ()
 
 @property (nonatomic, weak) UIView *targetView;
@@ -197,7 +201,7 @@
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         
         // HUD View
-        
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
         if ([UIVisualEffectView class] != Nil) {
             self.hudView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
         }
@@ -208,6 +212,13 @@
             self.hudView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
             self.hudView.layer.shouldRasterize = YES;
         }
+#else
+        self.hudView = [[UIView alloc] init];
+        self.hudView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.7f];
+        self.hudView.opaque = NO;
+        self.hudView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
+        self.hudView.layer.shouldRasterize = YES;
+#endif
         
         self.hudView.layer.cornerRadius = 10.0f;
         self.hudView.layer.masksToBounds = YES;
