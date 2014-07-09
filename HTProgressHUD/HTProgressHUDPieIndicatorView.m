@@ -11,7 +11,8 @@
 
 #pragma mark - Initializers
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame
+{
     self = [super initWithFrame:frame];
     if (self) {
         self.tintColor = [UIColor whiteColor];
@@ -25,7 +26,8 @@
 
 #pragma mark UIView overrides
 
-- (void)drawRect:(CGRect)rect {
+- (void)drawRect:(CGRect)rect
+{
     [super drawRect:rect];
     CGPoint center = CGPointMake(rect.origin.x + floorf(rect.size.height / 2.0f),
                                  rect.origin.y + floorf(rect.size.height / 2.0f));

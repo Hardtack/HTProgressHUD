@@ -30,7 +30,8 @@
 
 #pragma mark - Class methods
 
-+ (NSOperationQueue *)operationQueue {
++ (NSOperationQueue *)operationQueue
+{
     static dispatch_once_t onceToken;
     static NSOperationQueue *queue;
     dispatch_once(&onceToken, ^{
@@ -43,7 +44,8 @@
 
 #pragma mark Layout
 
-- (CGRect)updatePositionForHUDFrame:(CGRect)frame {
+- (CGRect)updatePositionForHUDFrame:(CGRect)frame
+{
     CGRect viewBounds = [self bounds];
     CGPoint center = CGPointMake(viewBounds.origin.x + floorf(viewBounds.size.width / 2.0f),
                                  viewBounds.origin.y + floorf(viewBounds.size.height / 2.0f));
@@ -90,7 +92,8 @@
     return frame;
 }
 
-- (void)updatePosition {
+- (void)updatePosition
+{
     CGRect frame = [self updatePositionForHUDFrame:self.hudView.frame];
     switch (self.position) {
         case HTProgressHUDPositionTopLeft:
@@ -126,7 +129,8 @@
     self.hudView.frame = frame;
 }
 
-- (void)updateHUD {
+- (void)updateHUD
+{
     // Indicator size
     CGRect indicatorFrame = self.indicatorView.frame;
     indicatorFrame.origin.y = self.hudView.bounds.origin.y + self.paddingInsets.top;
@@ -157,7 +161,8 @@
     self.hudView.frame = frame;
 }
 
-- (void)updateViews {
+- (void)updateViews
+{
     if (self.animateWhenLayoutChanged && !self.hidden) {
         if (![[NSThread currentThread] isMainThread]) {
             [self performSelectorOnMainThread:@selector(updateViews) withObject:nil waitUntilDone:NO];
@@ -186,11 +191,13 @@
 
 #pragma mark - Initializers
 
-- (instancetype)init {
+- (instancetype)init
+{
     return [self initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame
+{
     self = [super initWithFrame:frame];
     if (self) {
         // Self-Configurations
@@ -268,27 +275,33 @@
 
 #pragma mark Showing methods
 
-- (void)showInView:(UIView *)view {
+- (void)showInView:(UIView *)view
+{
     [self showInView:view animated:YES];
 }
 
-- (void)showAboveView:(UIView *)view {
+- (void)showAboveView:(UIView *)view
+{
     [self showInRect:view.frame inView:view.superview];
 }
 
-- (void)showInView:(UIView *)view animated:(BOOL)animated {
+- (void)showInView:(UIView *)view animated:(BOOL)animated
+{
     [self showInRect:view.bounds inView:view animated:animated];
 }
 
-- (void)showAboveView:(UIView *)view animated:(BOOL)animated {
+- (void)showAboveView:(UIView *)view animated:(BOOL)animated
+{
     [self showInRect:view.frame inView:view.superview animated:animated];
 }
 
-- (void)showInRect:(CGRect)rect inView:(UIView *)view {
+- (void)showInRect:(CGRect)rect inView:(UIView *)view
+{
     [self showInRect:rect inView:view animated:YES];
 }
 
-- (void)showInRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated {
+- (void)showInRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated
+{
     if (![[NSThread currentThread] isMainThread]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self showInRect:rect inView:view animated:animated];
@@ -325,15 +338,18 @@
 
 #pragma mark Showing with thread methods
 
-- (void)showInView:(UIView *)view whileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(BOOL)animated {
+- (void)showInView:(UIView *)view whileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(BOOL)animated
+{
     [self showInRect:view.bounds inView:view whileExecuting:method onTarget:target withObject:object animated:animated];
 }
 
-- (void)showAboveView:(UIView *)view whileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(BOOL)animated {
+- (void)showAboveView:(UIView *)view whileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(BOOL)animated
+{
     [self showInRect:view.frame inView:view.superview whileExecuting:method onTarget:target withObject:object animated:animated];
 }
 
-- (void)showInRect:(CGRect)rect inView:(UIView *)view whileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(BOOL)animated {
+- (void)showInRect:(CGRect)rect inView:(UIView *)view whileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(BOOL)animated
+{
     NSMethodSignature *signature = [[target class] instanceMethodSignatureForSelector:method];
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
     [invocation setTarget:target];
@@ -345,15 +361,18 @@
     [self showInRect:rect inView:view whileExecutingInvocation:invocation animated:animated];
 }
 
-- (void)showInView:(UIView *)view whileExecutingInvocation:(NSInvocation *)invocation animated:(BOOL)animated {
+- (void)showInView:(UIView *)view whileExecutingInvocation:(NSInvocation *)invocation animated:(BOOL)animated
+{
     [self showInRect:view.bounds inView:view whileExecutingInvocation:invocation animated:animated];
 }
 
-- (void)showAboveView:(UIView *)view whileExecutingInvocation:(NSInvocation *)invocation animated:(BOOL)animated {
+- (void)showAboveView:(UIView *)view whileExecutingInvocation:(NSInvocation *)invocation animated:(BOOL)animated
+{
     [self showInRect:view.frame inView:view.superview whileExecutingInvocation:invocation animated:animated];
 }
 
-- (void)showInRect:(CGRect)rect inView:(UIView *)view whileExecutingInvocation:(NSInvocation *)invocation animated:(BOOL)animated {
+- (void)showInRect:(CGRect)rect inView:(UIView *)view whileExecutingInvocation:(NSInvocation *)invocation animated:(BOOL)animated
+{
     NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithInvocation:invocation];
     [operation setCompletionBlock:^{
         [self hideWithAnimation:animated];
@@ -363,15 +382,18 @@
 }
 
 
-- (void)showWithAnimation:(BOOL)animated inView:(UIView *)view whileExecutingBlock:(dispatch_block_t)block {
+- (void)showWithAnimation:(BOOL)animated inView:(UIView *)view whileExecutingBlock:(dispatch_block_t)block
+{
     [self showWithAnimation:animated inRect:view.bounds inView:view whileExecutingBlock:block];
 }
 
-- (void)showWithAnimation:(BOOL)animated aboveView:(UIView *)view whileExecutingBlock:(dispatch_block_t)block {
+- (void)showWithAnimation:(BOOL)animated aboveView:(UIView *)view whileExecutingBlock:(dispatch_block_t)block
+{
     [self showWithAnimation:animated inRect:view.frame inView:view.superview whileExecutingBlock:block];
 }
 
-- (void)showWithAnimation:(BOOL)animated inRect:(CGRect)rect inView:(UIView *)view whileExecutingBlock:(dispatch_block_t)block {
+- (void)showWithAnimation:(BOOL)animated inRect:(CGRect)rect inView:(UIView *)view whileExecutingBlock:(dispatch_block_t)block
+{
     NSBlockOperation *operation = [NSBlockOperation blockOperationWithBlock:block];
     [operation setCompletionBlock:^{
         [self hideWithAnimation:animated];
@@ -383,11 +405,13 @@
 #pragma mark Hiding methods
 
 
-- (void)hide {
+- (void)hide
+{
     [self hideWithAnimation:YES];
 }
 
-- (void)hideWithAnimation:(BOOL)animated {
+- (void)hideWithAnimation:(BOOL)animated
+{
     if (![[NSThread currentThread] isMainThread]) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self hideWithAnimation:animated];
@@ -418,11 +442,13 @@
     }
 }
 
-- (void)hideAfterDelay:(NSTimeInterval)delay {
+- (void)hideAfterDelay:(NSTimeInterval)delay
+{
     [self hideAfterDelay:delay animated:YES];
 }
 
-- (void)hideAfterDelay:(NSTimeInterval)delay animated:(BOOL)animated {
+- (void)hideAfterDelay:(NSTimeInterval)delay animated:(BOOL)animated
+{
     NSMethodSignature *signature = [[self class] instanceMethodSignatureForSelector:@selector(hideWithAnimation:)];
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
     [invocation setTarget:self];
@@ -434,7 +460,8 @@
 
 #pragma mark Animation callback
 
-- (void)animationDidFinishWithType:(HTProgressHUDAnimationType)animationType {
+- (void)animationDidFinishWithType:(HTProgressHUDAnimationType)animationType
+{
     self.onShowingAnimation = NO;
     switch (animationType) {
         case HTProgressHUDAnimationTypeShowing:
@@ -467,12 +494,14 @@
 
 #pragma mark - Getters and Setters
 
-- (void)setPosition:(HTProgressHUDPosition)position {
+- (void)setPosition:(HTProgressHUDPosition)position
+{
     _position = position;
     [self updateViews];
 }
 
-- (void)setText:(NSString *)text {
+- (void)setText:(NSString *)text
+{
     _text = text;
     dispatch_async(dispatch_get_main_queue(), ^{
         self.textLabel.text = text;
@@ -480,30 +509,35 @@
     });
 }
 
-- (void)setIndicatorView:(HTProgressHUDIndicatorView *)indicatorView {
+- (void)setIndicatorView:(HTProgressHUDIndicatorView *)indicatorView
+{
     [_indicatorView removeFromSuperview];
     _indicatorView = indicatorView;
     [self.hudView addSubview:indicatorView];
     [self updateViews];
 }
 
-- (void)setMarginInsets:(UIEdgeInsets)marginInsets {
+- (void)setMarginInsets:(UIEdgeInsets)marginInsets
+{
     _marginInsets = marginInsets;
     [self updateViews];
 }
 
-- (void)setPaddingInsets:(UIEdgeInsets)paddingInsets {
+- (void)setPaddingInsets:(UIEdgeInsets)paddingInsets
+{
     _paddingInsets = paddingInsets;
     [self updateViews];
 }
 
-- (void)setProgress:(float)progress {
+- (void)setProgress:(float)progress
+{
     _progress = progress;
     self.indicatorView.progress = progress;
     [self updateViews];
 }
 
-- (void)setOnShowingAnimation:(BOOL)onShowingAnimation {
+- (void)setOnShowingAnimation:(BOOL)onShowingAnimation
+{
     _onShowingAnimation = onShowingAnimation;
     if (!onShowingAnimation && self.shouldHideWithAnimation) {
         [self hideWithAnimation:YES];
@@ -515,7 +549,8 @@
 
 #pragma mark UIView overrides
 
-- (void)layoutSubviews {
+- (void)layoutSubviews
+{
     [super layoutSubviews];
     [self updateHUD];
     [self updatePosition];

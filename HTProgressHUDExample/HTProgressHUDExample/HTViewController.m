@@ -19,20 +19,23 @@
 
 #pragma mark - Private methods
 
-- (void)simple {
+- (void)simple
+{
     HTProgressHUD *HUD = [[HTProgressHUD alloc] init];
     [HUD showInView:self.view];
     [HUD hideAfterDelay:3];
 }
 
-- (void)withText {
+- (void)withText
+{
     HTProgressHUD *HUD = [[HTProgressHUD alloc] init];
     HUD.text = @"Loading...";
     [HUD showInView:self.view];
     [HUD hideAfterDelay:3];
 }
 
-- (void)progress {
+- (void)progress
+{
     HTProgressHUD *HUD = [[HTProgressHUD alloc] init];
     HUD.indicatorView = [HTProgressHUDIndicatorView indicatorViewWithType:HTProgressHUDIndicatorTypePie];
     HUD.text = @"Uploading...";
@@ -45,7 +48,8 @@
     }];
 }
 
-- (void)zoomAnimationWithRing {
+- (void)zoomAnimationWithRing
+{
     HTProgressHUD *HUD = [[HTProgressHUD alloc] init];
     HUD.indicatorView = [HTProgressHUDIndicatorView indicatorViewWithType:HTProgressHUDIndicatorTypeRing];
     HUD.animation = [HTProgressHUDFadeZoomAnimation animation];
@@ -59,7 +63,8 @@
     }];
 }
 
--(void)textOnly{
+-(void)textOnly
+{
     HTProgressHUD *HUD = [[HTProgressHUD alloc] initWithFrame:CGRectMake(0, 0, 100, 40)];
 
     HUD.text = @"Hello, World!";
@@ -88,7 +93,8 @@
 
 #pragma mark UIViewController overrides
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     self.title = @"HTProgressHUD Demo";
@@ -110,21 +116,25 @@
     }];
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Table view data source methods
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     return 5;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Cell"];
@@ -150,7 +160,8 @@
 
 #pragma mark - Table view delegate methods
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     switch (indexPath.row) {
         case 0:

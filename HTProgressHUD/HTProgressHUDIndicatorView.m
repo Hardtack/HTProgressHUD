@@ -13,7 +13,8 @@
 
 #pragma mark - Class methods
 
-+ (HTProgressHUDIndicatorView *)indicatorViewWithType:(HTProgressHUDIndicatorType)type {
++ (HTProgressHUDIndicatorView *)indicatorViewWithType:(HTProgressHUDIndicatorType)type
+{
     switch (type) {
         case HTProgressHUDIndicatorTypeActivityIndicator:{
             UIActivityIndicatorView *activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
@@ -31,11 +32,13 @@
 
 #pragma mark - Initializers
 
-- (instancetype)init {
+- (instancetype)init
+{
     return [self initWithFrame:CGRectMake(0.0f, 0.0f, 50.0f, 50.0f)];
 }
 
-- (instancetype)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame
+{
     self = [super initWithFrame:frame];
     if (self) {
         self.opaque = NO;
@@ -44,7 +47,8 @@
     return self;
 }
 
-- (instancetype)initWithCustomView:(UIView *)view {
+- (instancetype)initWithCustomView:(UIView *)view
+{
     self = [self initWithFrame:CGRectMake(0.0f, 0.0f, view.frame.size.width, view.frame.size.height)];
     if (self) {
         [self addSubview:view];
@@ -57,7 +61,8 @@
 
 #pragma mark - Getters and Setters
 
-- (void)setProgress:(float)progress {
+- (void)setProgress:(float)progress
+{
     _progress = progress;
     [self performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:NO];
 }

@@ -17,36 +17,44 @@
 
 #pragma mark - Class methods
 
-+ (instancetype)animation {
++ (instancetype)animation
+{
     return [[[self class] alloc] init];
 }
 
 #pragma mark - Public methods
 
-- (void)setUpShowingAnimation:(HTProgressHUD *)progressHUD {
+- (void)setUpShowingAnimation:(HTProgressHUD *)progressHUD
+{
 }
 
-- (void)performShowingAnimation:(HTProgressHUD *)progressHUD {
+- (void)performShowingAnimation:(HTProgressHUD *)progressHUD
+{
     
 }
 
-- (void)tearDownShowingAnimation:(HTProgressHUD *)progressHUD {
+- (void)tearDownShowingAnimation:(HTProgressHUD *)progressHUD
+{
     
 }
 
-- (void)setUpHidingAnimation:(HTProgressHUD *)progressHUD {
+- (void)setUpHidingAnimation:(HTProgressHUD *)progressHUD
+{
     
 }
 
-- (void)performHidingAnimation:(HTProgressHUD *)progressHUD {
+- (void)performHidingAnimation:(HTProgressHUD *)progressHUD
+{
     
 }
 
-- (void)tearDownHidingAnimation:(HTProgressHUD *)progressHUD {
+- (void)tearDownHidingAnimation:(HTProgressHUD *)progressHUD
+{
     
 }
 
-- (void)finishAnimation {
+- (void)finishAnimation
+{
     [self.performingHUD animationDidFinishWithType:self.animationType];
     self.performingHUD = nil;
 }

@@ -11,7 +11,8 @@
 
 #pragma mark - Initializers
 
-- (instancetype)init {
+- (instancetype)init
+{
     self = [super init];
     if (self) {
         self.duration = 0.3;
@@ -28,11 +29,13 @@
 
 #pragma mark  Showing animation
 
-- (void)setUpShowingAnimation:(HTProgressHUD *)progressHUD {
+- (void)setUpShowingAnimation:(HTProgressHUD *)progressHUD
+{
     progressHUD.alpha = 0.0f;
 }
 
-- (void)performShowingAnimation:(HTProgressHUD *)progressHUD {
+- (void)performShowingAnimation:(HTProgressHUD *)progressHUD
+{
     [UIView setAnimationCurve:self.curve];
     [UIView animateWithDuration:self.duration
                      animations:^{
@@ -43,15 +46,18 @@
                      }];
 }
 
-- (void)tearDownShowingAnimation:(HTProgressHUD *)progressHUD {
+- (void)tearDownShowingAnimation:(HTProgressHUD *)progressHUD
+{
 }
 
 #pragma mark  Hiding animation
 
-- (void)setUpHidingAnimation:(HTProgressHUD *)progressHUD {
+- (void)setUpHidingAnimation:(HTProgressHUD *)progressHUD
+{
 }
 
-- (void)performHidingAnimation:(HTProgressHUD *)progressHUD {
+- (void)performHidingAnimation:(HTProgressHUD *)progressHUD
+{
     [UIView setAnimationCurve:self.curve];
     [UIView animateWithDuration:self.duration
                      animations:^{
@@ -62,7 +68,8 @@
                      }];
 }
 
-- (void)tearDownHidingAnimation:(HTProgressHUD *)progressHUD {
+- (void)tearDownHidingAnimation:(HTProgressHUD *)progressHUD
+{
     
 }
 
