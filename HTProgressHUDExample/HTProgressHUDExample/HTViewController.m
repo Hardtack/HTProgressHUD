@@ -83,7 +83,7 @@
         .right = 0,
     };
     
-    [HUD showInView:self.view];
+    [HUD showAboveView:self.tableView];
     [HUD hideAfterDelay:2];
 }
 
