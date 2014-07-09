@@ -72,7 +72,7 @@ You can install HTProgressHUD with [CocoaPods](http://cocoapods.org/).
 
 1.  Add a line for HTProgressHUD to your `Podfile`.  
     
-    `pod 'HTProgressHUD', '~> 0.1.1'`
+    `pod 'HTProgressHUD', '~> 0.2.1'`
 
 2.  Run install or update command.  
 
