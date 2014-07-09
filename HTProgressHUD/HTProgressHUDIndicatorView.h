@@ -18,8 +18,8 @@ typedef enum{
 
 @property (nonatomic) float progress; // 0.0 ~ 1.0
 
-- (id)initWithFrame:(CGRect)frame;
-- (id)initWithCustomView:(UIView *)view;
+- (instancetype)initWithFrame:(CGRect)frame;
+- (instancetype)initWithCustomView:(UIView *)view;
 
 + (HTProgressHUDIndicatorView *)indicatorViewWithType:(HTProgressHUDIndicatorType)type;
 

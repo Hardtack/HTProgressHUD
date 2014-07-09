@@ -65,9 +65,6 @@ typedef enum {
 @property (nonatomic) BOOL addToViewOnShow; // Default is YES;
 @property (nonatomic) BOOL removeFromSuperviewOnHide; // Default is YES;
 
-// View Interaction Options
-@property (nonatomic) BOOL disableUserInteractionOfSuperview;
-
 // Layout Options
 @property (nonatomic) UIEdgeInsets paddingInsets;
 @property (nonatomic) UIEdgeInsets marginInsets;
@@ -90,8 +87,8 @@ typedef enum {
 @property (nonatomic, copy) dispatch_block_t afterHidingBlock;
 
 /* Initializers */
-- (id)init;
-- (id)initWithFrame:(CGRect)frame;
+- (instancetype)init;
+- (instancetype)initWithFrame:(CGRect)frame;
 
 /* Progress HUD showing methods */
 - (void)showInView:(UIView *)view; // Animated

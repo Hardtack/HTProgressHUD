@@ -12,14 +12,14 @@
 
 #pragma mark - Initializers
 
-- (id)init {
+- (instancetype)init {
     self = [super init];
     if (self) {
         self.zoomInDuaration = 0.15;
         self.zoomOutDuaration = 0.15;
         self.zoomInCurve = UIViewAnimationCurveEaseIn;
         self.zoomOutCurve = UIViewAnimationCurveEaseOut;
-        self.zoomInScale = CGSizeMake(1.1, 1.1);
+        self.zoomInScale = CGSizeMake(1.1f, 1.1f);
     }
     return self;
 }
@@ -33,21 +33,21 @@
 #pragma mark  Showing animation
 
 - (void)setUpShowingAnimation:(HTProgressHUD *)progressHUD {
-    progressHUD.alpha = 0;
-    progressHUD.transform = CGAffineTransformMakeScale(0.1, 0.1);
+    progressHUD.alpha = 0.0f;
+    progressHUD.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
 }
 
 - (void)performShowingAnimation:(HTProgressHUD *)progressHUD {
     [UIView setAnimationCurve:self.zoomInCurve];
     [UIView animateWithDuration:self.zoomInDuaration
                      animations:^{
-                         progressHUD.alpha = 0.5;
+                         progressHUD.alpha = 0.5f;
                          progressHUD.transform = CGAffineTransformMakeScale(self.zoomInScale.width, self.zoomInScale.height);
                      }
                      completion:^(BOOL finished) {
                          [UIView setAnimationCurve:self.zoomOutCurve];
                          [UIView animateWithDuration:self.zoomOutDuaration animations:^{
-                             progressHUD.alpha = 1.0;
+                             progressHUD.alpha = 1.0f;
                              progressHUD.transform = CGAffineTransformIdentity;
                          } completion:^(BOOL finished) {
                              [self finishAnimation];
@@ -67,14 +67,14 @@
     [UIView setAnimationCurve:self.zoomInCurve];
     [UIView animateWithDuration:self.zoomInDuaration
                      animations:^{
-                         progressHUD.alpha = 0.5;
+                         progressHUD.alpha = 0.5f;
                          progressHUD.transform = CGAffineTransformMakeScale(self.zoomInScale.width, self.zoomInScale.height);
                      }
                      completion:^(BOOL finished) {
                          [UIView setAnimationCurve:self.zoomOutCurve];
                          [UIView animateWithDuration:self.zoomOutDuaration animations:^{
-                             progressHUD.alpha = 0.0;
-                             progressHUD.transform = CGAffineTransformMakeScale(0.1, 0.1);
+                             progressHUD.alpha = 0.0f;
+                             progressHUD.transform = CGAffineTransformMakeScale(0.1f, 0.1f);
                          } completion:^(BOOL finished) {
                              [self finishAnimation];
                          }];
@@ -82,7 +82,7 @@
 }
 
 - (void)tearDownHidingAnimation:(HTProgressHUD *)progressHUD {
-    progressHUD.alpha = 1.0;
+    progressHUD.alpha = 1.0f;
     progressHUD.transform = CGAffineTransformIdentity;
 }
 @end

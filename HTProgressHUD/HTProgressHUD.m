@@ -13,6 +13,10 @@
 #import "HTProgressHUDFadeAnimation.h"
 #import "HTProgressHUDIndicatorView.h"
 
+#ifndef __IPHONE_8_0
+#define __IPHONE_8_0 80000
+#endif
+
 @interface HTProgressHUD ()
 
 @property (nonatomic, weak) UIView *targetView;
@@ -42,15 +46,15 @@
 
 - (CGRect)updatePositionForHUDFrame:(CGRect)frame {
     CGRect viewBounds = [self bounds];
-    CGPoint center = CGPointMake(viewBounds.origin.x + floorf(viewBounds.size.width / 2),
-                                 viewBounds.origin.y + floorf(viewBounds.size.height / 2));
+    CGPoint center = CGPointMake(viewBounds.origin.x + floorf(viewBounds.size.width / 2.0f),
+                                 viewBounds.origin.y + floorf(viewBounds.size.height / 2.0f));
     switch (self.position) {
         case HTProgressHUDPositionTopLeft:
             frame.origin.x = self.marginInsets.left;
             frame.origin.y = self.marginInsets.top;
             break;
         case HTProgressHUDPositionTopCenter:
-            frame.origin.x = center.x - floorf(frame.size.width / 2);
+            frame.origin.x = center.x - floorf(frame.size.width / 2.0f);
             frame.origin.y = self.marginInsets.top;
             break;
         case HTProgressHUDPositionTopRight:
@@ -60,15 +64,15 @@
             
         case HTProgressHUDPositionCenterLeft:
             frame.origin.x = self.marginInsets.left;
-            frame.origin.y = center.y - floorf(frame.size.height / 2);
+            frame.origin.y = center.y - floorf(frame.size.height / 2.0f);
             break;
         case HTProgressHUDPositionCenter:
-            frame.origin.x = center.x - floorf(frame.size.width / 2);
-            frame.origin.y = center.y - floorf(frame.size.height / 2);
+            frame.origin.x = center.x - floorf(frame.size.width / 2.0f);
+            frame.origin.y = center.y - floorf(frame.size.height / 2.0f);
             break;
         case HTProgressHUDPositionCenterRight:
             frame.origin.x = viewBounds.size.width - self.marginInsets.right - frame.size.width;
-            frame.origin.y = center.y - floorf(frame.size.height / 2);
+            frame.origin.y = center.y - floorf(frame.size.height / 2.0f);
             break;
             
         case HTProgressHUDPositionBottomLeft:
@@ -76,7 +80,7 @@
             frame.origin.y = viewBounds.size.height - self.marginInsets.bottom - frame.size.height;
             break;
         case HTProgressHUDPositionBottomCenter:
-            frame.origin.x = center.x - floorf(frame.size.width / 2);
+            frame.origin.x = center.x - floorf(frame.size.width / 2.0f);
             frame.origin.y = viewBounds.size.height - self.marginInsets.bottom - frame.size.height;
             break;
         case HTProgressHUDPositionBottomRight:
@@ -134,7 +138,7 @@
     CGRect labelFrame = self.textLabel.frame;
     labelFrame.origin.y = indicatorFrame.origin.y + indicatorFrame.size.height;
     if (!CGRectIsEmpty(labelFrame) && !CGRectIsEmpty(indicatorFrame)) {
-        labelFrame.origin.y += 10;
+        labelFrame.origin.y += 10.0f;
     }
     
     // HUD size
@@ -144,10 +148,10 @@
     frame = [self updatePositionForHUDFrame:frame];
     
     
-    CGPoint center = CGPointMake(floorf(frame.size.width / 2),
-                                 floorf(frame.size.height / 2));
-    indicatorFrame.origin.x = center.x - floorf(indicatorFrame.size.width / 2);
-    labelFrame.origin.x = center.x - floorf(labelFrame.size.width / 2);
+    CGPoint center = CGPointMake(floorf(frame.size.width / 2.0f),
+                                 floorf(frame.size.height / 2.0f));
+    indicatorFrame.origin.x = center.x - floorf(indicatorFrame.size.width / 2.0f);
+    labelFrame.origin.x = center.x - floorf(labelFrame.size.width / 2.0f);
     
     self.indicatorView.frame = indicatorFrame;
     self.textLabel.frame = labelFrame;
@@ -183,11 +187,11 @@
 
 #pragma mark - Initializers
 
-- (id)init {
-    return [self initWithFrame:CGRectMake(0, 0, 100, 100)];
+- (instancetype)init {
+    return [self initWithFrame:CGRectMake(0.0f, 0.0f, 100.0f, 100.0f)];
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         // Self-Configurations
@@ -197,13 +201,28 @@
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
         
         // HUD View
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= __IPHONE_8_0
+        if ([UIVisualEffectView class] != Nil) {
+            self.hudView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+        }
+        else {
+            self.hudView = [[UIView alloc] init];
+            self.hudView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.7f];
+            self.hudView.opaque = NO;
+            self.hudView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
+            self.hudView.layer.shouldRasterize = YES;
+        }
+#else
         self.hudView = [[UIView alloc] init];
-        self.hudView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.7];
+        self.hudView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.7f];
         self.hudView.opaque = NO;
-        self.hudView.layer.cornerRadius = 10.0f;
-        self.hudView.layer.masksToBounds = YES;
         self.hudView.layer.rasterizationScale = [[UIScreen mainScreen] scale];
         self.hudView.layer.shouldRasterize = YES;
+#endif
+        
+        self.hudView.layer.cornerRadius = 10.0f;
+        self.hudView.layer.masksToBounds = YES;
+        
         [self addSubview:self.hudView];
         
         // Text Label
@@ -225,7 +244,7 @@
         self.removeFromSuperviewOnHide = YES;
         
         // Layout
-        self.paddingInsets = UIEdgeInsetsMake(20, 20, 20, 20);
+        self.paddingInsets = UIEdgeInsetsMake(20.0f, 20.0f, 20.0f, 20.0f);
         self.marginInsets = UIEdgeInsetsZero;
         self.position = HTProgressHUDPositionCenter;
         
@@ -238,7 +257,7 @@
         self.onShowingAnimation = NO;
         
         // Auto-layout
-        if (NSClassFromString(@"NSLayoutConstraint")) {
+        if ([NSLayoutConstraint class] != Nil) {
             [self setTranslatesAutoresizingMaskIntoConstraints:YES];
             [self.hudView setTranslatesAutoresizingMaskIntoConstraints:YES];
         }
@@ -277,10 +296,6 @@
     }
     if ([self.delegate respondsToSelector:@selector(progressHUD:willBeShownInView:)]) {
         [self.delegate progressHUD:self willBeShownInView:view];
-    }
-    
-    if (self.disableUserInteractionOfSuperview) {
-        self.targetView.userInteractionEnabled = NO;
     }
     
     self.hidden = NO;
@@ -360,9 +375,6 @@
         return;
     }
     
-    if (self.disableUserInteractionOfSuperview) {
-        self.targetView.userInteractionEnabled = YES;
-    }
     if (animated) {
         if (self.onShowingAnimation) {
             self.shouldHideWithAnimation = YES;

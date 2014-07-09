@@ -32,11 +32,11 @@
 
 #pragma mark - Initializers
 
-- (id)init {
-    return [self initWithFrame:CGRectMake(0, 0, 50, 50)];
+- (instancetype)init {
+    return [self initWithFrame:CGRectMake(0.0f, 0.0f, 50.0f, 50.0f)];
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.opaque = NO;
@@ -45,8 +45,8 @@
     return self;
 }
 
-- (id)initWithCustomView:(UIView *)view {
-    self = [self initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)];
+- (instancetype)initWithCustomView:(UIView *)view {
+    self = [self initWithFrame:CGRectMake(0.0f, 0.0f, view.frame.size.width, view.frame.size.height)];
     if (self) {
         [self addSubview:view];
         view.frame = [self bounds];
