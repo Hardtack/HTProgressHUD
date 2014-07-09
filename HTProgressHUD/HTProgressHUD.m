@@ -273,8 +273,16 @@
     [self showInView:view animated:YES];
 }
 
+- (void)showAboveView:(UIView *)view {
+    [self showInRect:view.frame inView:view.superview];
+}
+
 - (void)showInView:(UIView *)view animated:(BOOL)animated {
-    [self showInRect:[view bounds] inView:view animated:animated];
+    [self showInRect:view.bounds inView:view animated:animated];
+}
+
+- (void)showAboveView:(UIView *)view animated:(BOOL)animated {
+    [self showInRect:view.frame inView:view.superview animated:animated];
 }
 
 - (void)showInRect:(CGRect)rect inView:(UIView *)view {
@@ -319,8 +327,13 @@
 #pragma mark Showing with thread methods
 
 - (void)showInView:(UIView *)view whileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(BOOL)animated {
-    [self showInRect:[view bounds] inView:view whileExecuting:method onTarget:target withObject:object animated:animated];
+    [self showInRect:view.bounds inView:view whileExecuting:method onTarget:target withObject:object animated:animated];
 }
+
+- (void)showAboveView:(UIView *)view whileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(BOOL)animated {
+    [self showInRect:view.frame inView:view.superview whileExecuting:method onTarget:target withObject:object animated:animated];
+}
+
 - (void)showInRect:(CGRect)rect inView:(UIView *)view whileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(BOOL)animated {
     NSMethodSignature *signature = [[target class] instanceMethodSignatureForSelector:method];
     NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
@@ -334,7 +347,11 @@
 }
 
 - (void)showInView:(UIView *)view whileExecutingInvocation:(NSInvocation *)invocation animated:(BOOL)animated {
-    [self showInRect:[view bounds] inView:view whileExecutingInvocation:invocation animated:animated];
+    [self showInRect:view.bounds inView:view whileExecutingInvocation:invocation animated:animated];
+}
+
+- (void)showAboveView:(UIView *)view whileExecutingInvocation:(NSInvocation *)invocation animated:(BOOL)animated {
+    [self showInRect:view.frame inView:view.superview whileExecutingInvocation:invocation animated:animated];
 }
 
 - (void)showInRect:(CGRect)rect inView:(UIView *)view whileExecutingInvocation:(NSInvocation *)invocation animated:(BOOL)animated {
@@ -348,7 +365,11 @@
 
 
 - (void)showWithAnimation:(BOOL)animated inView:(UIView *)view whileExecutingBlock:(dispatch_block_t)block {
-    [self showWithAnimation:animated inRect:[view bounds] inView:view whileExecutingBlock:block];
+    [self showWithAnimation:animated inRect:view.bounds inView:view whileExecutingBlock:block];
+}
+
+- (void)showWithAnimation:(BOOL)animated aboveView:(UIView *)view whileExecutingBlock:(dispatch_block_t)block {
+    [self showWithAnimation:animated inRect:view.frame inView:view.superview whileExecutingBlock:block];
 }
 
 - (void)showWithAnimation:(BOOL)animated inRect:(CGRect)rect inView:(UIView *)view whileExecutingBlock:(dispatch_block_t)block {

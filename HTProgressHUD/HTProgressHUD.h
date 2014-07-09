@@ -90,19 +90,29 @@ typedef enum {
 - (instancetype)init;
 - (instancetype)initWithFrame:(CGRect)frame;
 
-/* Progress HUD showing methods */
+/* Progress HUD showing methods.
+   "Above view" means that the HUD will be added to the superview of `view`
+   as a subview above `view` */
 - (void)showInView:(UIView *)view; // Animated
 - (void)showInView:(UIView *)view animated:(BOOL)animated;
+- (void)showAboveView:(UIView *)view; // Animated
+- (void)showAboveView:(UIView *)view animated:(BOOL)animated;
 - (void)showInRect:(CGRect)rect inView:(UIView *)view; // Animated
 - (void)showInRect:(CGRect)rect inView:(UIView *)view animated:(BOOL)animated;
+
 // Selector based
 - (void)showInView:(UIView *)view whileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(BOOL)animated;
+- (void)showAboveView:(UIView *)view whileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(BOOL)animated;
 - (void)showInRect:(CGRect)rect inView:(UIView *)view whileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(BOOL)animated;
+
 // Invocation based
 - (void)showInView:(UIView *)view whileExecutingInvocation:(NSInvocation *)invocation animated:(BOOL)animated;
+- (void)showAboveView:(UIView *)view whileExecutingInvocation:(NSInvocation *)invocation animated:(BOOL)animated;
 - (void)showInRect:(CGRect)rect inView:(UIView *)view whileExecutingInvocation:(NSInvocation *)invocation animated:(BOOL)animated;
+
 // Block based
 - (void)showWithAnimation:(BOOL)animated inView:(UIView *)view whileExecutingBlock:(dispatch_block_t)block;
+- (void)showWithAnimation:(BOOL)animated aboveView:(UIView *)view whileExecutingBlock:(dispatch_block_t)block;
 - (void)showWithAnimation:(BOOL)animated inRect:(CGRect)rect inView:(UIView *)view whileExecutingBlock:(dispatch_block_t)block;
 
 /* Progress HUD hiding methods */
