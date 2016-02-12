@@ -66,7 +66,7 @@ You can even customize animation by subclassing `HTProgressHUDAnimation`.
 
 ##Installation
 
-###Cocoapods
+###CocoaPods
 
 You can install HTProgressHUD with [CocoaPods](http://cocoapods.org/).  
 
