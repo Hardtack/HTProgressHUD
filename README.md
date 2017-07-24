@@ -1,9 +1,6 @@
-## Notice About Maintainance
+# HTProgressHUD
 
-I cannot maintain this project actively until 2016 because of military service.
-
-
-#HTProgressHUD
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 HTProgressHUD is an replacement for UIProgressHUD, the undocumented UI component in iOS.  
 And it is also replacement for [MBProgressHUD](https://github.com/jdg/MBProgressHUD).  
@@ -15,15 +12,15 @@ So I re-implemented it, with newer-APIs, more stability and more customizabiliti
 [![](https://s3-ap-northeast-1.amazonaws.com/htprogresshud/Pie-thumb.png)](https://s3-ap-northeast-1.amazonaws.com/htprogresshud/Pie.png)
 [![](https://s3-ap-northeast-1.amazonaws.com/htprogresshud/Ring-thumb.png)](https://s3-ap-northeast-1.amazonaws.com/htprogresshud/Ring.png)
 
-##Requirements
+## Requirements
 
-###iOS SDK
+### iOS SDK
 
 *   iOS 5.0 or higher
 
 *   Automatic Reference Counting (ARC)
 
-###Frameworks
+### Frameworks
 
 *   UIKit.framework
 
@@ -34,9 +31,9 @@ So I re-implemented it, with newer-APIs, more stability and more customizabiliti
 *   QuartzCore.framework
 
 
-##Specifications
+## Specifications
 
-###Indicators
+### Indicators
 
 It has following built-in indicators.  
 
@@ -54,7 +51,7 @@ It has following built-in indicators.
 
 And you can also customize indicator by subclassing `HTProgressHUDIndicatorView`.  
 
-###Animations
+### Animations
 
 It has following built-in animations.  
 
@@ -64,9 +61,9 @@ It has following built-in animations.
 
 You can even customize animation by subclassing `HTProgressHUDAnimation`.  
 
-##Installation
+## Installation
 
-###CocoaPods
+### CocoaPods
 
 You can install HTProgressHUD with [CocoaPods](http://cocoapods.org/).  
 
@@ -82,7 +79,7 @@ You can install HTProgressHUD with [CocoaPods](http://cocoapods.org/).
     
     `#import <HTProgressHUD/HTProgressHUD.h>`
 
-###As a Static Library
+### As a Static Library
 
 You can add HTProgressHUD as a static library
 
@@ -113,7 +110,7 @@ You can add HTProgressHUD as a static library
 
 11. Done
 
-###As source files
+### As source files
 
 Copy following files into your project.  
 
@@ -145,15 +142,15 @@ Copy following files into your project.
 
 *   `HTProgressHUDRingIndicatorView.m`
 
-##Usages
+## Usages
 
-###Example
+### Example
     
     HTProgressHUD *HUD = [[HTProgressHUD alloc] init];
     [HUD showInView:self.view];
     [HUD hideAfterDelay:3];
 
-###More Complex Example
+### More Complex Example
 
     __block HTProgressHUD *progressHUD = [[HTProgressHUD alloc] init];
     progressHUD.animation = [HTProgressHUDFadeZoomAnimation animation];
@@ -173,12 +170,12 @@ Copy following files into your project.
 
 or See HTProgressHUDExample Project.  
 
-###Customization
+### Customization
    
 See the source of built-in animations and built-in indicators.
 These are also kind of customized animations/indicators.
 
-##Three-line Summary
+## Three-line Summary
 
 1.  MBProgressHUD is useful.
 
